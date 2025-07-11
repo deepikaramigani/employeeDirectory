@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        #employee-list {
+            height: 100%;
+            overflow-y: hidden;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px;
+        }
+
+        .employee-card {
+            max-width: 250px;
+            min-width: 250px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            flex-shrink: 0;
+        }
+
+        main {
+            display: flex;
+            gap: 20px;
+        }
+
+        aside {
+            width: 250px;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+
+            aside {
+                order: -1;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Employee Directory</h1>
+        <input type="text" id="search" placeholder="Search by name or email" />
+    </header>
+
+    <div class="toolbar">
+        <label for="sort">Sort: </label>
+        <select id="sort">
+            <option value="">--Select--</option>
+            <option value="firstName">First Name</option>
+            <option value="department">Department</option>
+        </select>
+        <label for="show">Show:</label>
+        <select id="show">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+    </div>
+
+    <main>
+        <aside>
+            <h2>Filter Employees</h2>
+            <div style="display: flex; gap: 10px;">
+                <label style="flex: 1;">First Name: <input type="text" id="filter-first" /></label>
+                <label style="flex: 1;">Last Name: <input type="text" id="filter-last" /></label>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <label style="flex: 1;">Email: <input type="text" id="filter-email" /></label>
+                <label style="flex: 1;">Department: <input type="text" id="filter-dept" /></label>
+            </div>
+            <label>Role: <input type="text" id="filter-role" /></label>
+            <button id="apply-filters">Apply</button>
+            <button id="reset-filters">Reset</button>
+        </aside>
+
+        <section id="employee-list"></section>
+    </main>
+
+    <footer>
+        <p>© 2025 Employee Directory App. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
