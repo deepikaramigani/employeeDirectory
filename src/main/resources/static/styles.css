@@ -1,0 +1,194 @@
+/* styles.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+header input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+}
+
+.toolbar {
+    padding: 15px;
+    background: #eee;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    overflow-x: hidden;
+}
+
+#employee-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    flex-grow: 1;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+}
+
+#employee-list::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+.employee-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: fit-content;
+    max-width: 100%;
+    flex-shrink: 0;
+}
+
+
+.employee-card p {
+    margin-bottom: 5px;
+}
+
+.employee-card button {
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.employee-card button:last-child {
+    background: #dc3545;
+}
+
+aside {
+    width: 250px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px black solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+    height: fit-content;
+}
+
+aside h2 {
+    margin-bottom: 15px;
+}
+
+aside label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+aside input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+aside button {
+    padding: 8px 12px;
+    margin-right: 10px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+aside button:last-child {
+    background: #6c757d;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        overflow-x: visible;
+    }
+
+    #employee-list {
+        flex-wrap: wrap;
+        overflow-x: visible;
+    }
+
+    aside {
+        width: 100%;
+        height: 100%;
+        position: static;
+    }
+
+    header input {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+#employee-list {
+    height: 100%;
+    overflow-y: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+
+.employee-card {
+    max-width: 250px;
+    min-width: 250px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    flex-shrink: 0;
+}
